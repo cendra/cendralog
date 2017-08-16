@@ -57,7 +57,8 @@ public class LogPrinter {
 		}
 	}
 
-	public void printJson(String name, int level, Object obj) {
+	public void printJson(String name, int level, String startMsg, Object obj,
+			String endMsg) {
 
 		String msg = "";
 
@@ -73,7 +74,7 @@ public class LogPrinter {
 			e.printStackTrace();
 		}
 
-		print(name, level, "\n\n" + msg + "\n");
+		print(name, level, startMsg + msg + endMsg);
 	}
 
 	private Level getLevel(int level) {
